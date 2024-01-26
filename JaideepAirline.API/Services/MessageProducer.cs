@@ -23,13 +23,13 @@ VirtualHost="/"
 var jaiconn = JaiFactory.CreateConnection();
 
 using var jaichannel = jaiconn.CreateModel();
+jaichannel.QueueDeclare("booking", durable: true, exclusive: false, autoDelete: false, arguments: null);
 
-jaichannel.QueueDeclare("booking",durable:true,exclusive:true);
 
 var jsonString=JsonSerializer.Serialize(message);
 var body = Encoding.UTF8.GetBytes(jsonString);
 
-jaichannel.BasicPublish("","bookings",body:body);
+jaichannel.BasicPublish("","booking",body:body);
 
 }
 
