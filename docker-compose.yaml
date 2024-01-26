@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  rabbitmq:
+    container_name: "JRabbitMQ"
+    image: rabbitmq:3.8-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=mypass
+    ports:
+      #Instace
+      - '5672:5672'
+      #WebInterface
+      - '15672:15672'
