@@ -1,0 +1,23 @@
+Credits : https://www.youtube.com/watch?v=eEipVEq8F1k
+
+
+Mohamad Lawand : .NET 6 - Message Broker with RabbitMQ
+
+
+Breif : 
+
+In this project POST web API is created and on the post event this event is published to Rabbit MQ. 
+
+The second half of project is the consumer , which in this case is a console application . here , the queue is consumed and console logging done for testing purpose.
+
+Also , A docker compose file is used to spinup a docker image of RMQ . 
+
+Significance : 
+
+This is a design principal / architecture of Microservices communication.
+
+for instance : An example i remember from YouTube. 
+In mircoservice architecture , all the services are suppose to be individual elements that can be hosted on multiple muchine , interacting with different databases. 
+In this scenario , if we want to initiate any additional step when the event occurs , then we need a means by which they can communicate with each other.
+
+A laymans example would be , When a signup happens Automatically a welcome email is triggered to the user.
